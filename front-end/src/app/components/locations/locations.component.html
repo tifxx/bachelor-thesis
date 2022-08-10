@@ -1,0 +1,17 @@
+<div class="container px-5">
+    <div class="row">
+      
+        <div class="col-4 d-flex flex-column justify-content-center">
+            <div class="d-flex justify-content-center"> 
+                <a class="btn btn-custom mb-5 px-4" routerLink="/newLocation" *ngIf="user?.role=='ADMIN'">Add new location</a>
+            </div>
+            <h3 class="text-center mb-3">Click on the name of the location you want to see on the map on the right:</h3>
+            <button *ngFor="let location of locations" class="btn btn-custom my-2"
+                (click)="clickedLocation(location)">{{location.name}}</button>
+        </div>
+        <div class="col-8">
+            <iframe width="800" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                [src]="trustedUrl" class="mx-5 mt-3"></iframe>
+        </div>
+    </div>
+</div>

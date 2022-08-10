@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/SkopjeCarRent
+    username: pinga
+    password: pinga
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+car:
+   app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000
+
+server:
+  port: 8002

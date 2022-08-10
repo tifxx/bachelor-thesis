@@ -1,0 +1,30 @@
+<div class="container m-5">
+    <div class="card p-2">
+        <h2 class="mb-3 pb-2 text-center border-bottom color-custom">Add location</h2>
+        <form #carFrom="ngForm"(ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Name</span>
+                <input class="form-control" type="text" name="name" [(ngModel)]="name" placeholder="Enter name" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Longitude</span>
+                    <input class="form-control" type="text" name="longitude"  [(ngModel)]="longitude" required 
+                    plaeholder="Enter longitude">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Latitude</span>
+                    <input class="form-control" type="text" name="latitude"  [(ngModel)]="latitude" required 
+                    plaeholder="Enter latitude">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom form-control p-2">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

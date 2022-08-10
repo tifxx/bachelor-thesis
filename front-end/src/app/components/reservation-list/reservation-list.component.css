@@ -1,0 +1,28 @@
+.car-card {
+    width: 350px;
+    height: auto;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.car-img {
+    width: 320px;
+    height: auto;
+}
+
+.btn-custom {
+    background-color: #e15232;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #f5856c;
+}
+
+.color-custom {
+    color: #e15232;
+}
+
+.carDroppedOff {
+    background-color: rgb(231, 231, 231);
+}

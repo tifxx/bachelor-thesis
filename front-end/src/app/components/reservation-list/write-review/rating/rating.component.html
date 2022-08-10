@@ -1,0 +1,13 @@
+<div class="d-flex flex-column align-items-center">
+    <div>
+        <button mat-icon-button class="star-color" *ngFor="let ratingId of ratingArray;
+        index as i" [id]="'star_'+i" (click)="calculateRating(i+1)">
+            <mat-icon class="icon-size">
+                {{ iconStatus(i) }}
+            </mat-icon>
+        </button>
+    </div>
+    <h5 class="mb-3">
+        Your rating <span>{{ rating }}</span>/<span>{{ totalStar }}</span>
+    </h5>
+</div>

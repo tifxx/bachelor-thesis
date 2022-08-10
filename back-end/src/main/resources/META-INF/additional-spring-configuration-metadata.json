@@ -1,0 +1,33 @@
+{
+  "properties": [
+    {
+      "name": "spring",
+      "type": "java.lang.String",
+      "description": "Description for spring."
+    },
+    {
+      "name": "spring.jpa.hibernate",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.hibernate."
+    },
+    {
+      "name": "spring.car.app.jwtExpirationMs",
+      "type": "java.lang.String",
+      "description": "Description for spring.car.app.jwtExpirationMs."
+    },
+    {
+      "name": "spring.car.app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Description for spring.car.app.jwtSecret."
+    },
+    {
+      "name": "car.app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Description for car.app.jwtSecret."
+    },
+    {
+      "name": "car.app.jwtExpirationMs",
+      "type": "java.lang.String",
+      "description": "Description for car.app.jwtExpirationMs."
+    }
+  ] }

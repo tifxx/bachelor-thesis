@@ -1,0 +1,85 @@
+<div class="container m-5">
+
+    <div class="card p-2" *ngIf="user?.role=='USER'">
+        <h2 class="m-2 pb-2 text-center border-bottom color-custom">Your Reservations:</h2>
+
+        <table class="table my-3">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Car model</th>
+                    <th scope="col">Pick up location and date</th>
+                    <th scope="col">Drop off location and date</th>
+                    <th scope="col">Seats</th>
+                    <th scope="col">Transmission</th>
+                    <th scope="col">Insurance</th>
+                    <th scope="col">Air conditioner</th>
+                    <th scope="col">Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let res of reservation">
+                <tr [ngClass]="{'carDroppedOff' : res.status=='CarDroppedOff'}">
+                    <th scope="row">{{res.car.model}}</th>
+                    <td>{{res.pickUpLocation.name}} on {{res.pickUpDate | date:'MMMM d, y, H:mm'}}</td>
+                    <td>{{res.dropOffLocation.name}} on {{res.dropOffDate | date:'MMMM d, y, H:mm'}}</td>
+                    <td>{{res.car.seats}}</td>
+                    <td>{{res.car.transmission}}</td>
+                    <td class="" *ngIf="res.car.withInsurance">
+                        yes
+                    </td>
+                    <td *ngIf="!res.car.withInsurance">
+                         no
+                    </td>
+                    <td class="" *ngIf="res.car.withAirConditioner">
+                        yes
+                    </td>
+                    <td *ngIf="!res.car.withAirConditioner">
+                         no
+                    </td>
+                    <td>{{res.totalPrice}}</td>
+                    <td *ngIf="res.status=='CarDroppedOff' && res.reviewWritten==false">
+                        <a class="btn btn-custom px-2" [routerLink]='["/review", res.id, res.car.id]'
+                            >Write a review</a></td>
+                    <td *ngIf="res.status!='CarDroppedOff'"><button class="btn btn-danger px-1"
+                         (click)="cancel(res.id)">Cancel Reservation</button></td>
+                        <td><button class="btn btn-custom px-1"
+                            (click)="viewPdf(res.id)">View Payment Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="card p-2" *ngIf="user?.role=='ADMIN'">
+        <h2 class="m-2 pb-2 text-center border-bottom color-custom">All Reservations:</h2>
+
+        <table class="table my-3">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Num</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Car model</th>
+                    <th scope="col">Pick up location and date</th>
+                    <th scope="col">Drop off location and date</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Reservation status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let res of reservation">
+                <tr [ngClass]="{'carDroppedOff' : res.status=='CarDroppedOff'}">
+                    <th scope="row">{{res.id}}</th>
+                    <td>{{res.client.email}}</td>
+                    <td>{{res.car.model}}</td>
+                    <td>{{res.pickUpLocation.name}} on {{res.pickUpDate | date:'MMMM d, y, H:mm'}}</td>
+                    <td>{{res.dropOffLocation.name}} on {{res.dropOffDate | date:'MMMM d, y, H:mm'}}</td>
+                    <td>{{res.totalPrice}}</td>
+                    <td>{{res.status}}</td>
+                    <td><a class="btn btn-custom px-2" [routerLink]='["/status", res.id]'
+                            *ngIf="res.status!='CarDroppedOff'">Change status</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

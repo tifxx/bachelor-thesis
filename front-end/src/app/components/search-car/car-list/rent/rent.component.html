@@ -1,0 +1,81 @@
+<div class="container m-5">
+    <div class="card p-3">
+        <h2 class="mb-3 pb-2 text-center border-bottom color-custom">Rent the car {{car?.model}}</h2>
+        <form #carFrom="ngForm" (ngSubmit)="onSubmit()">
+
+            <h3 class="text-center"> Please, fill in this additional information:</h3>
+            <div class="input-group mb-3 mt-2">
+                <span class="input-group-text">Pick up location</span>
+                <div class="form-check form-check-inline m-2" *ngFor="let location of locations">
+                    <input class="form-check-input" type="radio" name="p{{location.id}}" id="p{{location.id}}"
+                        value="p{{location.id}}" [(ngModel)]="pickUpLocation">
+                    <label class="form-check-label" for="p{{location.id}}">{{location.name}}</label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Drop off location</span>
+                <div class="form-check form-check-inline m-2" *ngFor="let location of locations">
+                    <input class="form-check-input" type="radio" name="d{{location.id}}" id="d{{location.id}}"
+                        value="d{{location.id}}" [(ngModel)]="dropOffLocation">
+                    <label class="form-check-label" for="d{{location.id}}">{{location.name}}</label>
+                </div>
+            </div>
+
+            <h3 class="text-center"> Booking information: </h3>
+            <div class="d-flex justify-content-center m-3">
+
+                <img class="card-img-top car-img mx-3" src="{{car?.image}}" alt="Card image cap">
+
+                <div class="mt-2">
+                    <h5>{{car?.model}}</h5>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-people-fill" viewBox="0 0 16 16">
+                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            <path fill-rule="evenodd"
+                                d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                        </svg> {{car?.seats}}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-snow"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793V8.866l-3.4 1.963-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646-.884-.237a.5.5 0 1 1 .26-.966l1.848.495L7 8 3.6 6.037l-1.85.495a.5.5 0 0 1-.258-.966l.883-.237-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646-.237-.883a.5.5 0 1 1 .966-.258l.495 1.849L7.5 7.134V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 1 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v3.927l3.4-1.963.496-1.85a.5.5 0 1 1 .966.26l-.236.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l3.4 1.963 1.849-.495a.5.5 0 0 1 .259.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.236.883a.5.5 0 1 1-.966.258l-.495-1.849-3.4-1.963v3.927l1.353 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z" />
+                        </svg>
+                        <span *ngIf="car?.withAirConditioner"> yes</span>
+                        <span *ngIf="car?.withAirConditioner==false"> no</span>
+                    </div>
+
+                    <div class="card-text">
+                        Price for a day: {{car?.priceForADay}} EUR
+                    </div>
+
+                    <div class="card-text">
+                        Transmission: {{car?.transmission}}
+                    </div>
+
+                    <div class="card-text" *ngIf="car?.withInsurance">
+                        Insurance: yes
+                    </div>
+
+                    <div class="card-text" *ngIf="car?.withInsurance==false">
+                        Insurance: no
+                    </div>
+
+                </div>
+            </div>
+
+            <h5 class="text-center color-custom">
+                By clicking Rent, you agree to reserve this car from {{pickUpDate | date:'MMMM d, y, H:mm'}} to
+                {{dropOffDate |
+                date:'MMMM d, y, H:mm'}} for a price of {{totalPrice}} EUR
+            </h5>
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom form-control p-2">
+                    Rent
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

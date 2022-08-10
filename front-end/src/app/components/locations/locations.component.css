@@ -1,0 +1,13 @@
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-custom {
+    background-color: #e15232;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #f5856c;
+}

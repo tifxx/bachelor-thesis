@@ -1,0 +1,23 @@
+.btn-custom {
+    background-color: #e15232;
+    color: white;
+}
+
+.color-custom {
+    color: #e15232;
+}
+
+.btn-custom:hover {
+    background-color: #f5856c;
+}
+
+.car-img {
+    width: 320px;
+    height: auto;
+}
+
+h3 {
+    background-color: #e15232;
+    color: white;
+    border-radius: 5px;
+}

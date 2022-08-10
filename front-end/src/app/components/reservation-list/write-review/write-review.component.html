@@ -1,0 +1,17 @@
+<div class="container m-5">
+    <div class="card p-3">
+        <h2 class="mb-3 pb-2 text-center border-bottom color-custom">Write a review</h2>
+
+        <app-rating [rating]="rating" (ratingUpdated)="onRatingChanged($event)"></app-rating>
+
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom form-control p-2">
+                    Post
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

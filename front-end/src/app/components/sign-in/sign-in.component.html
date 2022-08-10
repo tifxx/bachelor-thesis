@@ -1,0 +1,42 @@
+<div class="container m-5">
+    <div class="card p-2">
+        <h2 class="mb-3 pb-2 text-center border-bottom color-custom">Create new user</h2>
+        <form #carFrom="ngForm"(ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Email</span>
+                <input class="form-control" type="email" name="email" [(ngModel)]="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Name</span>
+                <input class="form-control" type="text" name="name" [(ngModel)]="name"
+                    placeholder="Enter name" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Surname</span>
+                <input class="form-control" type="text" name="surname" [(ngModel)]="surname" required
+                    placeholder="Enter surname">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Password</span>
+                    <input class="form-control" type="password" name="password"  [(ngModel)]="password" required 
+                    plaeholder="Enter password">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Confirm password</span>
+                    <input class="form-control" type="password" name="confirmPassword" [(ngModel)]="confirmPassword" required 
+                    plaeholder="Confirm Password">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom form-control p-2">
+                    Create
+                </button>
+                {{message}}
+            </div>
+        </form>
+    </div>
+</div>

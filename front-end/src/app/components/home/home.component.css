@@ -1,0 +1,22 @@
+.box {
+    margin-top: 150px;
+}
+
+.title {
+    color: #e15232;
+}
+
+.box {
+    column-gap: 10px;
+}
+
+a {
+    background-color: #e15232;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+}
+
+a:hover {
+    background-color: #f5856c;
+}

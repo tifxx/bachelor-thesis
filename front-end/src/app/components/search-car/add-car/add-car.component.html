@@ -1,0 +1,90 @@
+<div class="container m-5">
+    <div class="card p-2">
+        <h2 class="mb-3 pb-2 text-center border-bottom color-custom">Add new car</h2>
+        <form #carFrom="ngForm"(ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Model</span>
+                <input class="form-control" type="text" name="model" [(ngModel)]="model" placeholder="Enter model name" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Price for a day</span>
+                <input class="form-control" type="number" name="priceForADay" [(ngModel)]="priceForADay"
+                    placeholder="Enter price in eur" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Image</span>
+                <input class="form-control" type="text" name="image" [(ngModel)]="image" required
+                    placeholder="Enter image source">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Insurance</span>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="withInsurance" id="withInsuranceTrue"
+                        value="true" [(ngModel)]="withInsurance">
+                    <label class="form-check-label" for="withInsuranceTrue">Yes</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="withInsurance" id="withInsuranceFalse"
+                        value="false" [(ngModel)]="withInsurance">
+                    <label class="form-check-label" for="withInsuranceFalse">No</label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Air conditioner</span>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="withAirConditioner" id="withAirConditionerTrue"
+                        value="true" [(ngModel)]="withAirConditioner">
+                    <label class="form-check-label" for="withAirConditionerTrue">Yes</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="withAirConditioner" id="withAirConditionerFalse"
+                        value="false" [(ngModel)]="withAirConditioner">
+                    <label class="form-check-label" for="withAirConditionerFalse">No</label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Seats</span>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="seats" id="seatsTwo"
+                        value="two" [(ngModel)]="seats">
+                    <label class="form-check-label" for="seatsTwo">Two</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="seats" id="seatsFive"
+                        value="five" [(ngModel)]="seats">
+                    <label class="form-check-label" for="seatsFive">Five</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="seats" id="seatsNine"
+                        value="nine" [(ngModel)]="seats">
+                    <label class="form-check-label" for="seatsNine">Nine</label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Transmission</span>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="transmission" id="transmissionManual"
+                        value="manual" [(ngModel)]="transmission">
+                    <label class="form-check-label" for="transmissionManual">Manual</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="radio" name="transmission" id="transmissionAutomatic"
+                        value="automatic" [(ngModel)]="transmission">
+                    <label class="form-check-label" for="transmissionAutomatic">Automatic</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom form-control p-2">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
