@@ -1,28 +1,29 @@
-<nav class="navbar navbar-expand-lg">
-    <a routerLink="/home">
-        <img src="../../../assets/SkopjeCarRent.png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link fw-bold mx-1" routerLink="/home">Home</a>
-            <a class="nav-item nav-link fw-bold mx-1" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent a car</a>
-            <a class="nav-item nav-link fw-bold mx-1" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All cars</a>
-            <a class="nav-item nav-link fw-bold mx-1" routerLink="/locations">Locations</a>
-            <a class="nav-item nav-link fw-bold mx-1" routerLink="/reservations" *ngIf="currentUser">Reservations</a>
+<nav class="navbar navbar-expand-lg" [class.fixed-top]="isFixed">
+    <div class="container-fluid">
+        <img class="navbar-brand mx-3" id="logo" src="../../../assets/logo.png" routerLink="/home">
+        <button class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>          
+          <div class="collapse navbar-collapse d-flex" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/home">Home</a>
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent a
+                    car</a>
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All
+                    cars</a>
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/locations">Locations</a>
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/reservations"
+                    *ngIf="currentUser">Reservations</a>
+                <a class="nav-item nav-link fw-bold mx-1" routerLink="/howTo">How to?</a>
+            </div>
+            <div class="navbar-nav ms-auto mx-3">
+                <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/signin">Sign up</a>
+                <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/login">Log in</a>
+                <a class="nav-item nav-link fw-bold mx-1 hello-user" *ngIf="currentUser">Hello <span
+                        class="color-custom ">{{currentUser.name}}!</span></a>
+                <button class="btn fw-bold mx-1 px-3 rounded btn-custom" (click)="onLogOut()" *ngIf="currentUser">Log
+                    out</button>
+            </div>
         </div>
-        <div class="navbar-nav ms-auto mx-3">
-            <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/signin">Sign up</a>
-            <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/login">Log in</a>
-            <a class="nav-item nav-link fw-bold mx-1 hello-user" *ngIf="currentUser">Hello <span
-                    class="color-custom ">{{currentUser.name}}!</span></a>
-            <button class="btn fw-bold mx-1 px-3 rounded btn-custom" (click)="onLogOut()" *ngIf="currentUser">Log out</button>
-
-
-        </div>
-
     </div>
 </nav>

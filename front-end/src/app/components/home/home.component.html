@@ -1,21 +1,19 @@
-<div class="container">
-    <div class="d-flex justify-content-center box">
-        <div>
-            <div>
-                <h1 class="display-3 title">Rent a car in a few clicks! </h1>
-                <h3 class="text-secondary"> We have great offers for rentals.</h3>
-                <h5 class="text-secondary"> Book now and pay when you pick up the car.</h5>
+<div class="d-flex align-items-center justify-content-center box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                    <h1 class="moto">Discover <span class="custom-color">Skopje</span></h1>
+                    <h1 class="moto">on <span class="custom-color">wheels.</span></h1>
+                    <h3 class="text-secondary pt-1"> Rent a Car and Unleash Your Adventure. Unlock the Freedom to Roam the City at Your Own Pace</h3>
+                <div class="mt-4 d-flex justify-content-center">
+                    <a class="fw-bold py-2 px-3 mx-5" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent now</a>
+                    <a class="fw-bold py-2 px-3 mx-5" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All cars</a>
+                    <a class="fw-bold py-2 px-3 mx-5" routerLink="/locations">Locations</a>
+                </div>
             </div>
-
-            <div class="mt-4">
-                <a class="fw-bold p-3 mx-5" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent now</a>
-                <a class="fw-bold p-3 mx-5" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All cars</a>
-                <a class="fw-bold p-3" routerLink="/locations">Locations</a>
+            <div class="col-md-12 col-lg-6">
+                <img src="../../../assets/background.png" class="img-fluid">
             </div>
-
-        </div>
-        <div class="">
-            <img src="../../../assets/background.png">
         </div>
     </div>
 </div>

@@ -1,3 +1,4 @@
+import { HowToComponent } from './components/how-to/how-to.component';
 import { WriteReviewComponent } from './components/reservation-list/write-review/write-review.component';
 import { ChangeStatusComponent } from './components/reservation-list/change-status/change-status.component';
 import { ReservationListComponent } from './components/reservation-list/reservation-list.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'reservations', component: ReservationListComponent },
   { path: 'status/:id', component: ChangeStatusComponent },
   { path: 'review/:resId/:carId', component: WriteReviewComponent },
-  {path: 'newLocation', component:NewLocationComponent},
+  {path: 'newLocation', component: NewLocationComponent},
+  {path: 'howTo', component: HowToComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 
 ];

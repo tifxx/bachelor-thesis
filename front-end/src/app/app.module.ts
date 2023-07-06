@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RatingComponent } from './components/reservation-list/write-review/rating/rating.component';
 import { NewLocationComponent } from './components/locations/new-location/new-location.component';
+import { HowToComponent } from './components/how-to/how-to.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { NewLocationComponent } from './components/locations/new-location/new-lo
     EditCarComponent,
     WriteReviewComponent,
     RatingComponent,
-    NewLocationComponent
+    NewLocationComponent,
+    HowToComponent
   ],
   imports: [
     BrowserModule,

@@ -5,11 +5,6 @@ a:hover:not(.hello-user) {
     color: white;
 }
 
-nav {
-    width: 100%;
-    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2); */
-}
-
 .color-custom {
     color: #e15232;
 }
@@ -21,4 +16,9 @@ nav {
 
 .btn-custom:hover {
     background-color: #f5856c;
+}
+
+#logo{
+    max-height: 150px;
+    width: 150px;
 }
