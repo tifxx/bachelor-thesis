@@ -1,24 +1,80 @@
-a:hover:not(.hello-user) {
+/* a:hover:not(.hello-user) {
     transition: backgroud-color 1.3s;
     background-color: #f5856c;
     border-radius: 10px;
     color: white;
+} */
+
+.menu a, button {
+	color: #212529;
+    font-family: 'Lato', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	padding: 15px 25px;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .color-custom {
     color: #e15232;
 }
 
-.btn-custom {
-    background-color: #e15232;
-    color: white;
-}
-
-.btn-custom:hover {
-    background-color: #f5856c;
-}
-
 #logo{
     max-height: 150px;
     width: 150px;
+}
+
+/*
+hover
+*/
+
+.SMN_effect-13 a, button {
+	text-shadow: none;
+	padding: 10px 8px;
+}
+
+.SMN_effect-13 a:not(.hello-user):before, .SMN_effect-13 button:before {
+	color: #fff;
+	text-shadow: 0 0 1px #e15232;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.SMN_effect-13 a:not(.hello-user):after, .SMN_effect-13 button:after  {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #e15232;
+	opacity: 0;
+	-webkit-transform: translateY(5px);
+	-moz-transform: translateY(5px);
+	transform: translateY(5px);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.SMN_effect-13 a:not(.hello-user):hover:before, .SMN_effect-13 a:not(.hello-user):focus:before, .SMN_effect-13 button:hover:before, .SMN_effect-13 button:focus:before{
+	opacity: 0;
+	-webkit-transform: translateY(-2px);
+	-moz-transform: translateY(-2px);
+	transform: translateY(-2px);
+}
+
+.SMN_effect-13 a:not(.hello-user):hover:after, .SMN_effect-13 a:not(.hello-user):focus:after, 
+.SMN_effect-13 button:hover:after, .SMN_effect-13 button:focus:after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowToComponent } from './how-to.component';
+import { FaqComponent } from './faq.component';
 
 describe('HowToComponent', () => {
-  let component: HowToComponent;
-  let fixture: ComponentFixture<HowToComponent>;
+  let component: FaqComponent;
+  let fixture: ComponentFixture<FaqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HowToComponent ]
+      declarations: [ FaqComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HowToComponent);
+    fixture = TestBed.createComponent(FaqComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

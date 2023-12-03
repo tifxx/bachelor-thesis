@@ -1,3 +1,6 @@
+.card {
+    width: fit-content;
+}
 .btn-custom {
     background-color: #e15232;
     color: white;
@@ -20,4 +23,27 @@ h3 {
     background-color: #e15232;
     color: white;
     border-radius: 5px;
+}
+
+h2,
+.car-model {
+    font-family: 'Lato', sans-serif;
+    color: #212529;
+}
+
+.car-model {
+    display: inline-block;
+    position: relative;
+}
+
+.car-model::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #e15232;
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
 }

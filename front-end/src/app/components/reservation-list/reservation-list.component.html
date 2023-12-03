@@ -1,9 +1,9 @@
 <div class="container m-5">
 
     <div class="card p-2" *ngIf="user?.role=='USER'">
-        <h2 class="m-2 pb-2 text-center border-bottom color-custom">Your Reservations:</h2>
+        <h2 class="m-2 pb-2 text-center">Your Reservations:</h2>
 
-        <table class="table my-3">
+        <table class="table my-3 cell-center">
             <thead class="thead-light">
                 <tr>
                     <th scope="col">Car model</th>
@@ -20,7 +20,7 @@
             <tbody *ngFor="let res of reservation">
                 <tr [ngClass]="{'carDroppedOff' : res.status=='CarDroppedOff'}">
                     <th scope="row">{{res.car.model}}</th>
-                    <td>{{res.pickUpLocation.name}} on {{res.pickUpDate | date:'MMMM d, y, H:mm'}}</td>
+                    <td class="">{{res.pickUpLocation.name}} on {{res.pickUpDate | date:'MMMM d, y, H:mm'}}</td>
                     <td>{{res.dropOffLocation.name}} on {{res.dropOffDate | date:'MMMM d, y, H:mm'}}</td>
                     <td>{{res.car.seats}}</td>
                     <td>{{res.car.transmission}}</td>
@@ -36,7 +36,7 @@
                     <td *ngIf="!res.car.withAirConditioner">
                          no
                     </td>
-                    <td>{{res.totalPrice}}</td>
+                    <td>{{res.totalPrice}} EUR</td>
                     <td *ngIf="res.status=='CarDroppedOff' && res.reviewWritten==false">
                         <a class="btn btn-custom px-2" [routerLink]='["/review", res.id, res.car.id]'
                             >Write a review</a></td>

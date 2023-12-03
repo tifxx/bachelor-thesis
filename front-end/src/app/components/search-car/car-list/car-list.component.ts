@@ -50,10 +50,5 @@ export class CarListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  change(value: string)
-  {
-    
-  }
-
+  
 }

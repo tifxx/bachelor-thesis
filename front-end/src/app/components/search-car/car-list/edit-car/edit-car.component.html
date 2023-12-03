@@ -1,5 +1,5 @@
-<div class="container m-5">
-    <div class="card p-3">
+<div class="container d-flex m-auto justify-content-center align-items-center">
+    <div class="card p-5 mt-5">
         <h2 class="mb-3 pb-2 text-center border-bottom color-custom" >Edit car: {{car.model}}</h2>
         <form #carFrom="ngForm" (ngSubmit)="onSubmit()" *ngIf="car">
             <div class="input-group mb-3">

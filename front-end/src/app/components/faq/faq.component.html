@@ -1,0 +1,150 @@
+<div class="container">
+    <main class="box">
+        <p> Experience the freedom of 🚗 </p>
+        <section class="animation">
+            <div class="first">
+                <div> seamless and carefree travel </div>
+            </div>
+            <div class="second">
+                <div> the open road </div>
+            </div>
+            <div class="third">
+                <div> unforgettable adventures </div>
+            </div>
+        </section>
+    </main>
+    <div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-lg-5 justify-content-center m-auto">
+                    <h1 class="moto">Welcome to</h1>
+                    <h1 class="moto">Skopje</h1>
+                    <h1 class="moto"><span class="custom-color">Car Rent.</span></h1>
+                </div>
+                <div class="col-md-11 col-lg-7 main-text m-auto p-5">
+                        Renting a car has never been easier. Simply create an account or log in on your existing one, enter your
+                    desired rental dates below, and we'll find the perfect car for your journey. Once you've entered your dates,
+                    our system will search for available cars that match your criteria. You'll then see a list of cars along
+                    with their details, including the model, features, and pricing. Choose the one that suits your needs, and
+                    reserve it with a few simple steps. To complete your reservation, you need to enter location for pick up and
+                    drop off. In the Reservations tab, you can see all your reservations.
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+                <div class="row">
+
+                    <div class="col-md-11 col-lg-7">
+
+                        <div class="faq" id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-1">
+                                    <div class="mb-0">
+                                        <button class="faq-title" (click)="toggleCollapse(1)"
+                                            [attr.aria-expanded]="isCollapseOpen(1)"
+                                            [attr.aria-controls]="'faqCollapse-1'">
+                                            <span class="badge">1</span>How do I create an account with Skopje Car Rent?
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-1" [ngbCollapse]="!isCollapseOpen(1)"
+                                    [attr.aria-labelledby]="'faqHeading-1'" role="tabpanel">
+                                    <div class="card-body">
+                                        <p>To create an account, click on the "Sign up" button on our website's
+                                            homepage. Fill in the required information. Once submitted, your account
+                                            will be created, and you can log in using your credentials. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-2">
+                                    <div class="mb-0">
+                                        <button class="faq-title" (click)="toggleCollapse(2)"
+                                            [attr.aria-expanded]="isCollapseOpen(2)"
+                                            [attr.aria-controls]="'faqCollapse-2'">
+                                            <span class="badge">2</span> Can I rent a car without an account?
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-2" [ngbCollapse]="!isCollapseOpen(2)"
+                                    [attr.aria-labelledby]="'faqHeading-2'" role="tabpanel">
+                                    <div class="card-body">
+                                        <p>No, you need to create an account or log in to an existing one to rent a car
+                                            with Skopje Car Rent. It allows us to provide you with a seamless and
+                                            personalized rental experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-3">
+                                    <div class="mb-0">
+                                        <button class="faq-title" (click)="toggleCollapse(3)"
+                                            [attr.aria-expanded]="isCollapseOpen(3)"
+                                            [attr.aria-controls]="'faqCollapse-3'">
+                                            <span class="badge">3</span> How do I search for available cars?
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-3" [ngbCollapse]="!isCollapseOpen(3)"
+                                    [attr.aria-labelledby]="'faqHeading-3'" role="tabpanel">
+                                    <div class="card-body">
+                                        <p>After logging in, enter your desired rental dates in the provided fields. Our
+                                            system will search for available cars based on your criteria and display
+                                            them on
+                                            the search results page.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-4">
+                                    <div class="mb-0">
+                                        <button class="faq-title" (click)="toggleCollapse(4)"
+                                            [attr.aria-expanded]="isCollapseOpen(4)"
+                                            [attr.aria-controls]="'faqCollapse-4'">
+                                            <span class="badge">4</span> How do I reserve a car?
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-4" [ngbCollapse]="!isCollapseOpen(4)"
+                                    [attr.aria-labelledby]="'faqHeading-4'" role="tabpanel">
+                                    <div class="card-body">
+                                        <p>Once you find a car that suits your needs, click on the "Reserve" button. You
+                                            then need to enter additional details such as pick-up and drop-off location.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-5">
+                                    <div class="mb-0">
+                                        <button class="faq-title" (click)="toggleCollapse(5)"
+                                            [attr.aria-expanded]="isCollapseOpen(5)"
+                                            [attr.aria-controls]="'faqCollapse-5'">
+                                            <span class="badge">5</span> Is there a pre-payment required for car
+                                            rentals?
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-5" [ngbCollapse]="!isCollapseOpen(5)"
+                                    [attr.aria-labelledby]="'faqHeading-5'" role="tabpanel">
+                                    <div class="card-body">
+                                        <p>No, we do not require any upfront payment. You will pay for the rental when
+                                            you pick up the car. We accept various payment methods for your convenience.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-lg-5 justify-content-center m-auto text-end">
+                        <h1 class="moto">Frequently</h1>
+                        <h1 class="moto">Asked</h1>
+                        <h1 class="moto"><span class="custom-color">Questions.</span></h1>
+                    </div>
+                </div>
+        </section>
+
+    </div>
+</div>

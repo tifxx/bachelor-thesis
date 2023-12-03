@@ -19,7 +19,10 @@ export class HeaderComponent implements OnInit {
     router.events.pipe(filter(val => ((val instanceof NavigationStart)))).
       subscribe((val) => {
 
-        if (val instanceof NavigationStart && ((val as NavigationStart).url === '/home')) {
+        if (val instanceof NavigationStart && ((val as NavigationStart).url === '/home' || (val as NavigationStart).url === '/search'
+        || (val as NavigationStart).url === '/login' || (val as NavigationStart).url === '/signin' || (val as NavigationStart).url === '/newLocation')
+        || (val as NavigationStart).url.startsWith('/status')
+        || (val as NavigationStart).url.startsWith('/review')) {
           this.isFixed = true;
         }
         else {
@@ -36,6 +39,12 @@ export class HeaderComponent implements OnInit {
   onLogOut() {
     this.tokenService.signOut();
     window.location.href = '/login';
+  }
+
+  isNavbarOpen = false;
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
   }
 
 }

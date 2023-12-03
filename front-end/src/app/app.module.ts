@@ -25,8 +25,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RatingComponent } from './components/reservation-list/write-review/rating/rating.component';
 import { NewLocationComponent } from './components/locations/new-location/new-location.component';
-import { HowToComponent } from './components/how-to/how-to.component';
-
+import { FaqComponent } from './components/faq/faq.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { HowToComponent } from './components/how-to/how-to.component';
     WriteReviewComponent,
     RatingComponent,
     NewLocationComponent,
-    HowToComponent
+    FaqComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +59,8 @@ import { HowToComponent } from './components/how-to/how-to.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

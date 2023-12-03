@@ -1,29 +1,60 @@
-<nav class="navbar navbar-expand-lg" [class.fixed-top]="isFixed">
+<!-- <nav class="navbar navbar-expand-lg" [class.fixed-top]="isFixed">
     <div class="container-fluid">
         <img class="navbar-brand mx-3" id="logo" src="../../../assets/logo.png" routerLink="/home">
-        <button class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>          
-          <div class="collapse navbar-collapse d-flex" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/home">Home</a>
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent a
-                    car</a>
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All
-                    cars</a>
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/locations">Locations</a>
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/reservations"
-                    *ngIf="currentUser">Reservations</a>
-                <a class="nav-item nav-link fw-bold mx-1" routerLink="/howTo">How to?</a>
-            </div>
-            <div class="navbar-nav ms-auto mx-3">
-                <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/signin">Sign up</a>
-                <a class="nav-item nav-link fw-bold mx-1" *ngIf="!currentUser" routerLink="/login">Log in</a>
-                <a class="nav-item nav-link fw-bold mx-1 hello-user" *ngIf="currentUser">Hello <span
-                        class="color-custom ">{{currentUser.name}}!</span></a>
-                <button class="btn fw-bold mx-1 px-3 rounded btn-custom" (click)="onLogOut()" *ngIf="currentUser">Log
-                    out</button>
-            </div>
+        </button>
+        <div class="collapse navbar-collapse d-flex" id="navbarNavAltMarkup">
+            <ul class="navbar-nav SMN_effect-13 menu">
+                <li><a class="nav-item nav-link mx-1" routerLink="/home">Home</a></li>
+                <li><a class="nav-item nav-link mx-1" routerLink="/search"
+                        *ngIf="currentUser?.role=='USER'">Rent a
+                        car</a></li>
+                <li><a class="nav-item nav-link mx-1" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All
+                        cars</a></li>
+                <li><a class="nav-item nav-link mx-1" routerLink="/locations">Locations</a></li>
+                <li><a class="nav-item nav-link mx-1" routerLink="/reservations"
+                    *ngIf="currentUser">Reservations</a></li>
+                <li><a class="nav-item nav-link mx-1" routerLink="/howTo">FAQ</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto mx-3 SMN_effect-13 menu">
+                <li><a class="nav-item nav-link mx-1" *ngIf="!currentUser" routerLink="/signin">Sign up</a></li>
+                <li><a class="nav-item nav-link mx-1" *ngIf="!currentUser" routerLink="/login">Log in</a></li>
+                <li><a class="nav-item nav-link mx-1 hello-user" *ngIf="currentUser">Hello <span
+                    class="color-custom ">{{currentUser.name}}!</span></a></li>
+                <li><button class="btn mx-1 px-3 rounded SMN_effect-13" (click)="onLogOut()" *ngIf="currentUser">Log
+                    out</button></li>
+                </ul>
         </div>
     </div>
-</nav>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg" [class.fixed-top]="isFixed">
+    <div class="container-fluid">
+      <img class="navbar-brand mx-3" id="logo" src="../../../assets/logo.png" routerLink="/home">
+      <button class="navbar-toggler" type="button" [attr.aria-controls]="'navbarNavAltMarkup'"
+        [attr.aria-expanded]="isNavbarOpen ? 'true' : 'false'" aria-label="Toggle navigation" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngbCollapse]="!isNavbarOpen">
+        <ul class="navbar-nav SMN_effect-13 menu">
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/search" *ngIf="currentUser?.role=='USER'">Rent a car</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/cars" *ngIf="currentUser?.role!='USER'">All cars</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/locations">Locations</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/reservations" *ngIf="currentUser">Reservations</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" routerLink="/faq">FAQ</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto mx-3 SMN_effect-13 menu">
+          <li class="nav-item"><a class="nav-link mx-1" *ngIf="!currentUser" routerLink="/signin">Sign up</a></li>
+          <li class="nav-item"><a class="nav-link mx-1" *ngIf="!currentUser" routerLink="/login">Log in</a></li>
+          <li class="nav-item"><a class="nav-link mx-1 hello-user" *ngIf="currentUser">Hello <span class="color-custom">{{currentUser.name}}!</span></a></li>
+          <li class="nav-item"><button class="btn mx-1 px-3 rounded SMN_effect-13" (click)="onLogOut()" *ngIf="currentUser">Log out</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
