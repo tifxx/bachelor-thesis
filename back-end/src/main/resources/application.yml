@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/SkopjeCarRent
-    username: pinga
-    password: pinga
+    username: postgres
+    password: tifani
   jpa:
     show-sql: true
     hibernate:

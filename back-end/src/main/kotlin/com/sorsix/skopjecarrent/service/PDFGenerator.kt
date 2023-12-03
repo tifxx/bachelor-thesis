@@ -71,13 +71,13 @@ object PDFGenerator {
             document.add(table)
             document.add(Chunk.NEWLINE)
 
-            val totalPrice = (Duration.between(reservation.pickUpDate, reservation.dropOffDate).toDays())*reservation.car.priceForADay
+//            val totalPrice = (Duration.between(reservation.pickUpDate, reservation.dropOffDate).toDays())*reservation.car.priceForADay
             val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
             val pickUpDate = formatter.format(reservation.pickUpDate)
             val dropOffDate = formatter.format(reservation.dropOffDate)
             document.add(Paragraph("Client ${reservation.client.name} ${reservation.client.surname} with e-mail address ${reservation.client.email}"))
             document.add(Paragraph("The car is requested from ${pickUpDate} at location ${reservation.pickUpLocation.name} to  ${dropOffDate} at location ${reservation.dropOffLocation.name}"))
-            document.add(Paragraph("Total price for the service is ${totalPrice} EUR"))
+            document.add(Paragraph("Total price for the service is ${reservation.totalPrice} EUR"))
             document.close()
         } catch (e: DocumentException) {
             logger.error(e.toString())
